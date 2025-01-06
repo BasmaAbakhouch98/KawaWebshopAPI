@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kawawebshopapi
+  namespace: mspr4
+  labels:
+    app: kawawebshopapi
+spec:
+  selector:
+    app: kawawebshopapi
+  ports:
+    - name: http
+      port: 8081

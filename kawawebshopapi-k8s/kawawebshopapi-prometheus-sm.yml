@@ -1,0 +1,16 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: kawawebshopapi-app
+  namespace: tick
+  labels:
+    team: mspr4
+    app: kawawebshopapi
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: kawawebshopapi
+  endpoints:
+    - port: web
+      path: /prometheusMetrics
